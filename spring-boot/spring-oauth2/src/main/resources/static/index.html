@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Demo</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width" />
+        <base href="/" />
+
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .container {
+                padding: 10px;
+                border: 2px solid #444;
+                border-radius: 5px;
+                margin: 10px;
+            }
+
+            .unauthenticated {
+                background-color: #000;
+                color: #fff;
+            }
+
+            .btn {
+                background-color: red;
+                padding: 5px 20px;
+                border-radius: 5px;
+                outline: none;
+                border: none;
+                color: #fff;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Demo</h1>
+        <div class="container unauthenticated">
+            <div>
+                With Google:
+                <a href="/oauth2/authorization/google">click here</a>
+            </div>
+        </div>
+        <div class="container authenticated" style="display: none">
+            Logged in as: <span id="user"></span>
+            <div>
+                <button onClick="logout()" class="btn btn-primary">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        (async function () {
+            const req = await fetch("/user");
+            const data = await req.json();
+
+            if (data.email) {
+                document.querySelector(".authenticated").style.display =
+                    "block";
+                document.querySelector("#user").innerHTML = data.email;
+            }
+        })();
+
+        async function logout() {
+            const req = await fetch("/logout", { method: "POST" });
+
+            if (req.ok) {
+                document.querySelector(".authenticated").style.display = "none";
+                document.querySelector("#user").innerHTML = "";
+            }
+        }
+    </script>
+</html>
