@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'android';
+    src: url(fontes/idroid.otf) format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #84E1AD;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    text-align: justify;
+    margin: 15px;
+}
+
+header#header-principal > p {
+    text-align: center;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
+}
+
+header#header-principal {
+    background-image: linear-gradient(to bottom, #4add98, #154929);
+    height: 300px;
+    color: white;
+    text-align: center;
+}
+
+header#header-principal > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.459);
+    font-size: 60px;
+    padding: 30px;
+}
+
+.font-android {
+    font-family: 'Android', sans-serif;
+    background-image: linear-gradient(to right, rgba(13, 189, 22, 0.301), #fff);
+    color: #154929;
+}
+
+section#historia > article > h1 {
+    font-size: 35px;
+    background-image: none;
+}
+
+h2 {
+    margin: 24px;
+}
+
+p#p-principal {
+    font-size: 25px;
+}
+
+nav#menu {
+    text-align: left;
+    margin-top: 80px;
+}
+
+nav#menu > a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+nav#menu > a:hover {
+    color: rgb(200, 199, 199);
+    text-decoration: underline;
+}
+
+main {
+    background-color: white;
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.383);
+}
+
+span {
+    color: #154929;
+    font-weight: bolder;
+}
+
+.link {
+    color: #154929;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.link:hover {
+    color: #1f6d3d; 
+    text-decoration: underline;
+}
+
+.link::after {
+    color: gray;
+    content: '🔗';
+}
+
+#imagem-mascote-novo {
+    margin-left: 250px;
+}
+
+section#video {
+    background-color: #154929;
+    width: 840px;
+    margin: auto;
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.383);
+}
+
+iframe {
+    margin: 25px 45px 25px 45px;
+}
+
+section#lista {
+    background-color: white;
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 6px 16px 4px rgba(0, 0, 0, 0.383);
+    border-radius: 0px 0px 10px 10px;
+}
+
+
+#header-lista {
+    background-color: #44a36d;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 5px 4px 10px 1px rgb(0 0 0 / 20%);
+}
+
+article#lista-art {
+    background-color: #84e1ac9a;
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 5px 4px 10px 1px rgb(0 0 0 / 20%);
+}
+
+footer {
+    background-color: #154929;
+    padding: 5px;
+    color: rgba(255, 255, 255, 0.603);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 17px;
+}

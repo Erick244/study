@@ -1,0 +1,54 @@
+body {
+    background-color: rgb(105, 45, 129);
+    font: normal 17pt Arial;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 550px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.472);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+}
+input {
+    border-color: blueviolet;
+    border-radius: 10px;
+    padding: 3px;
+    font-size: 11pt;
+    background-color: white;
+}
+input:hover {
+    background: rgba(147, 26, 218, 0.219);
+}
+
+.b:hover {
+    background-color: blueviolet;
+    color: wheat;
+}
+
+#tab {
+    border-color: blueviolet;
+    border-radius: 1px;
+    padding: 3px;
+    font: normal 13pt Arial;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.397);
+    
+
+}
+
+#tab:hover {
+    background: rgba(147, 26, 218, 0.219);
+}

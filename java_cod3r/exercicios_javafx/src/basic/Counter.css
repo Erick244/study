@@ -1,0 +1,31 @@
+.content {
+	-fx-background-color: #000;
+	-fx-font-family: "Kanit", monospace;
+}
+
+.title {
+	-fx-text-fill: #0080c0;
+	-fx-font-size: 36px;
+}
+
+.counterNumberLabel {
+	-fx-text-fill: #fff;
+	-fx-font-size: 28px;
+}
+
+.button {
+	-fx-background-color: #fff;
+	-fx-text-fill: #0080c0;
+	-fx-font-size: 28px;
+	-fx-min-width: 60px;
+	-fx-min-height: 60px; 
+	-fx-background-radius: 50%;
+}
+
+.textGreen {
+	-fx-text-fill: green;
+}
+
+.textRed {
+	-fx-text-fill: red;
+}

@@ -1,0 +1,11 @@
+h1 {
+    font-size: 20px;
+}
+
+.fundoVermelho {
+    background-color: rgba(255, 0, 0, 0.527);
+}
+
+.negrito {
+    font-weight: bold;
+}

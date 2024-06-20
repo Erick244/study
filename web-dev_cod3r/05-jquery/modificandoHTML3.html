@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #03</h1>
+    <div id='conteudo'></div>
+
+    <script>
+        $(function () {
+            const compras = [
+                { nome: 'Telcado', valor: 350 },
+                { nome: 'Mouse', valor: 150 },
+                { nome: 'Monitor', valor: 1350 },
+                { nome: 'Fone/Microfone', valor: 400 }
+            ]
+
+            const linhas = compras.map(compra => {
+                const tdNome = $('<td>').html(compra.nome);
+                const tdValor = $('<td>').html(compra.valor);
+                
+                return $('<tr>').append(tdNome, tdValor);
+            })
+
+            const tabela = $('<table>').append(linhas)
+                .css('border', '5px solid');
+            
+            $('#conteudo').append(tabela);
+        })
+    </script>
+</body>

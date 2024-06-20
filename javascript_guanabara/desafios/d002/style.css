@@ -1,0 +1,15 @@
+body {
+    font: normal 20pt Arial;
+}
+input {
+    width: 200px;
+    height: 80px;
+    font-size: 18pt;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.246);
+}
+input:hover {
+    background-color: rgba(134, 132, 132, 0.404);
+    height: 85px;
+    width: 205px;
+}

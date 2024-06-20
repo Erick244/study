@@ -1,0 +1,48 @@
+body {
+    font: normal 17pt Arial;
+    background-color: rgb(81, 74, 90);
+}
+header {
+    text-align: center;
+    color: white;
+}
+section {
+    background-color: white;
+    width: 700px;
+    height: 500px;
+    margin: auto;
+    border-radius: 10px;
+    padding: 15px;
+}
+.foto {
+    text-align: center;
+}
+.inputs {
+    text-align: center;
+}
+input {
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: white;
+}
+input:hover {
+    width: 120px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    height: 35px;
+
+}
+
+.verde:hover {
+    background-color: rgba(31, 200, 31, 0.322);
+}
+.vermelho:hover {
+    background-color: rgba(212, 39, 39, 0.418);
+}
+.amarelo:hover {
+    background-color: rgba(200, 231, 26, 0.322);
+}
+.auto:hover {
+    background-color: rgba(45, 46, 45, 0.322);
+}

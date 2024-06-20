@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localidade</title>
+    <style>
+        body {
+            background-color: rgb(42, 41, 41);
+            color: aliceblue;
+            font: normal 18pt Arial;
+        }
+        input {
+            font: normal 12pt Arial;
+        }
+        input#botao {
+            height: 30px;
+            background-color: rgb(13, 175, 21);
+        }
+    </style>
+</head>
+<body>
+    <h1>De onde você é?</h1>
+    Digite o seu pais: <input type="search" name="loc" id="loc">
+    <input id='botao' type="button" value="Verificar" onclick="verif()">
+    <div id='resp'></div>
+    <script>
+        function verif() {
+            var loc = window.document.querySelector('input#loc')
+            var pais = String(loc.value)
+            var resp = window.document.getElementById('resp')
+            resp.innerText = `Morando em ${pais}`
+            if (pais.toLocaleLowerCase() == 'brasil') {
+                resp.innerHTML += `<p>Você é Brasileiro</p>`
+            } else {
+                resp.innerHTML += `<p>Você é Estrangeiro</p>`
+            }
+        }
+    </script>
+</body>
+</html>

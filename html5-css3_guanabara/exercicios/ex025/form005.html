@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de formulario</h1>
+    <form action="http://localhost:7070" method="get">
+        <fieldset>
+            <legend>Genero</legend>
+            <input type="radio" name="gen" id="masc">
+            <label for="masc">Masculino</label><br>
+
+            <input type="radio" name="gen" id="fem" checked>
+            <label for="fem">Feminino</label>
+        </fieldset>
+        <fieldset>
+            <legend>Esportes Favoritos</legend>
+
+            <input type="checkbox" name="basq" id="basq">
+            <label for="basq">Basquete</label><br>
+            
+            <input type="checkbox" name="fut" id="fut" checked>
+            <label for="fut">Futebol</label><br>
+
+            <input type="checkbox" name="nat" id="nat">
+            <label for="nat">Natação</label><br>
+
+            <input type="checkbox" name="ten" id="ten">
+            <label for="ten">Tênis</label>
+        </fieldset>
+        <p>
+            <input type="submit" value="Enviar">
+        </p>
+    </form>
+</body>
+</html>

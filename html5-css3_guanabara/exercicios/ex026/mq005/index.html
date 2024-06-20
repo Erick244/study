@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-query.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+        <i id="burguer" class="material-symbols-outlined">menu</i>
+        <menu id="itens">
+            <ul>
+                <li><a href="#">Opção 1</a></li>
+                <li><a href="#">Opção 2</a></li>
+                <li><a href="#">Opção 3</a></li>
+                <li><a href="#">Opção 4</a></li>
+                <li><a href="#">Opção 5</a></li>
+            </ul>
+        </menu>
+    </header>
+    <main>
+        <article>
+            <h2>Testando Media Queries</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nobis in natus reprehenderit vel a nostrum, odio maxime aperiam, quis culpa quas fugiat dolorem laborum vero sequi error aut omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi iusto atque quisquam quasi. Molestias corrupti, saepe repudiandae officiis odio quia obcaecati! Quasi temporibus quidem ratione, non molestiae aperiam ad assumenda?Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi numquam, sunt consequuntur nihil porro, nemo vel, voluptatum quas in assumenda alias officiis repellat. Adipisci veritatis totam reprehenderit architecto ipsum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nobis in natus reprehenderit vel a nostrum, odio maxime aperiam, quis culpa quas fugiat dolorem laborum vero sequi error aut omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi iusto atque quisquam quasi. Molestias corrupti, saepe repudiandae officiis odio quia obcaecati! Quasi temporibus quidem ratione, non molestiae aperiam ad assumenda?Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi numquam, sunt consequuntur nihil porro, nemo vel, voluptatum quas in assumenda alias officiis repellat. Adipisci veritatis totam reprehenderit architecto ipsum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo nobis in natus reprehenderit vel a nostrum, odio maxime aperiam, quis culpa quas fugiat dolorem laborum vero sequi error aut omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi iusto atque quisquam quasi. Molestias corrupti, saepe repudiandae officiis odio quia obcaecati! Quasi temporibus quidem ratione, non molestiae aperiam ad assumenda?Lorem ipsum dolor sit amet consectetur adipisicing elit. At animi numquam, sunt consequuntur nihil porro, nemo vel, voluptatum quas in assumenda alias officiis repellat. Adipisci veritatis totam reprehenderit architecto ipsum. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi adipisci quas voluptatibus doloremque pariatur inventore nemo hic magnam suscipit quisquam exercitationem sed qui iste repudiandae necessitatibus minima id, rerum beatae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae natus dolores eligendi facilis itaque odio repellat obcaecati perspiciatis, quasi error, laborum possimus, porro dolorem totam? Deleniti ipsa nesciunt iste molestias?</p>
+        </article>
+    </main>
+    <script>
+        const menu = document.getElementById('itens');
+        document.getElementById('burguer').onclick = () => {
+            if (menu.style.display == 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        onresize = () => {
+            if (innerWidth >= 768) {
+                menu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

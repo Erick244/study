@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Troco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculando o Troco</h1>
+    </header>
+    <section>
+        <div>
+            <p>Nome do Produto: <input type="search" name="nomeProduto" id="nomeP"></p>
+            <p>Preço do Produto: R$<input type="number" name="preçoProduto" id="preçoP"></p>
+            <p>Valor a Pagar: R$<input type="number" name="valor" id="valor"></p>
+            <p><input class='botao' type="button" value="Finalizar" onclick='finalizar()'></p>
+
+        </div>
+        <div id="resp">
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <form action="teste.py" method="post" autocomplete="off">
+        <p>
+            <label for="estado">Estado:</label>
+            <select name="estado" id="estado">
+
+                <option value="" selected>Selecione um Estado</option>
+
+                <optgroup label="Sudeste"> 
+                    <option value="sp">São Paulo</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="mg">Minas Gerais</option>
+                    <option value="es">Espirito Santo</option>
+                </optgroup>
+                
+                <optgroup label="Nordeste">
+                    <option value="ba">Bhaia</option>
+                    <option value="ma">Maranhão</option>
+                    <option value="pe">Pernambuco</option>
+                    <option value="rn">Rio Grande do Norte</option>
+                </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <label for="prof">Profissão:</label>
+            <input type="text" id="prof" list="lista">
+            <datalist id="lista">
+                <option>Administrador</option>
+                <option>Desenvolvedor</option>
+                <option>Professor</option>
+                <option>Advogado</option>
+            </datalist>
+        </p>
+
+        <p>
+            <label for="msg">Mensagem:</label>
+            <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Sua Mensagem..."></textarea>
+        </p>
+        
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>

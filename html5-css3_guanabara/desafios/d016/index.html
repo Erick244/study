@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-query.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <section class="login">
+            <div class="imagem">
+                <!-- Imagem carregada via CSS -->
+            </div>
+            <div class="formulario">
+                <h1>Login</h1>
+                <p>Seja bem-vindo(a) novamente. Faça login para acessar sua conta e poder fazer as configurações no seu ambiente.</p>
+                <form method="post" autocomplete="off" action="login.py" autocomplete="on">
+                    <div class="campo">
+                        <i class="material-symbols-outlined">person</i>
+                        <input type="email" name="login" id="login" placeholder="Seu e-mail" autocomplete="email" maxlength="30" required>
+                        <label for="login">Login</label>
+                    </div>
+                    <div class="campo">
+                        <i class="material-symbols-outlined">vpn_key</i>
+                        <input type="password" name="senha" id="senha" placeholder="Sua senha" autocomplete="current-password" required minlength="8" maxlength="20">
+                        <label for="senha">Senha</label>
+                    </div>
+                    <input type="submit" value="Entrar">
+                    <a href="#" class="botao">
+                        Esqueci a senha <i class="material-symbols-outlined">mail</i>
+                    </a>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
