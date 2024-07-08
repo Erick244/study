@@ -1,0 +1,1 @@
+import "./creational/factory-method";
