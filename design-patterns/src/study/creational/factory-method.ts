@@ -71,7 +71,6 @@ class Application {
     }
 }
 
-console.log("\n FACTORY-METHOD-TEST: \n");
 // Teste
 const App = new Application("Windows");
 

@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "ts-node-dev --cls --respawn --transpile-only src/index.ts"
+        "start:study": "ts-node-dev --cls --respawn --transpile-only src/study/index.ts",
+        "start:factory-method": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/factory-method/index.ts",
+        "start:abstract-factory": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/abstract-factory/index.ts"
     },
     "keywords": [],
     "author": "",

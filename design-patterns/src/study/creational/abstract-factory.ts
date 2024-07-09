@@ -95,5 +95,5 @@ class ApplicationConfigurer {
     }
 }
 
-console.log("\n ABSTRACT-FACTORY-TEST: \n");
+// Teste
 new ApplicationConfigurer("Mac");
