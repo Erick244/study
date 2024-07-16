@@ -4,11 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start:study": "ts-node-dev --cls --respawn --transpile-only src/study/index.ts",
-        "start:factory-method": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/factory-method/index.ts",
-        "start:abstract-factory": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/abstract-factory/index.ts",
-        "start:builder": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/builder/index.ts",
-        "start:prototype": "ts-node-dev --cls --respawn --transpile-only src/practice/creational/prototype/index.ts"
+        "start": "ts-node-dev --cls --respawn --transpile-only",
+        "start:study": "pnpm start src/study/index.ts",
+        "start:factory-method": "pnpm start src/practice/creational/factory-method/index.ts",
+        "start:abstract-factory": "pnpm start src/practice/creational/abstract-factory/index.ts",
+        "start:builder": "pnpm start src/practice/creational/builder/index.ts",
+        "start:prototype": "pnpm start src/practice/creational/prototype/index.ts",
+        "start:singleton": "pnpm start src/practice/creational/singleton/index.ts",
+        "start:adapter": "pnpm start src/practice/structural/adapter/index.ts",
+        "start:bridge": "pnpm start src/practice/structural/bridge/index.ts"
     },
     "keywords": [],
     "author": "",
