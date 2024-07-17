@@ -7,4 +7,5 @@
 
 // # Structural Patterns
 // import "./structural/adapter";
-import "./structural/bridge";
+// import "./structural/bridge";
+import "./structural/composite";
