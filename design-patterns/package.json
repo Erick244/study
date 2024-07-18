@@ -13,7 +13,8 @@
         "start:singleton": "pnpm start src/practice/creational/singleton/index.ts",
         "start:adapter": "pnpm start src/practice/structural/adapter/index.ts",
         "start:bridge": "pnpm start src/practice/structural/bridge/index.ts",
-        "start:composite": "pnpm start src/practice/structural/composite/index.ts"
+        "start:composite": "pnpm start src/practice/structural/composite/index.ts",
+        "start:decorator": "pnpm start src/practice/structural/decorator/index.ts"
     },
     "keywords": [],
     "author": "",
