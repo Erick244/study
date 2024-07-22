@@ -10,4 +10,5 @@
 // import "./structural/bridge";
 // import "./structural/composite"
 // import "./structural/decorator";
-import "./structural/facade";
+// import "./structural/facade";
+import "./structural/flyweight";
