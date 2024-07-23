@@ -11,4 +11,5 @@
 // import "./structural/composite"
 // import "./structural/decorator";
 // import "./structural/facade";
-import "./structural/flyweight";
+// import "./structural/flyweight";
+import "./structural/proxy";
