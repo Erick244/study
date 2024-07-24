@@ -12,4 +12,7 @@
 // import "./structural/decorator";
 // import "./structural/facade";
 // import "./structural/flyweight";
-import "./structural/proxy";
+// import "./structural/proxy";
+
+// # Behavioral Patterns
+import "./behavioral/chain-of-responsibility";

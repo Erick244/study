@@ -17,7 +17,8 @@
         "start:decorator": "pnpm start src/practice/structural/decorator/index.ts",
         "start:facade": "pnpm start src/practice/structural/facade/index.ts",
         "start:flyweight": "pnpm start src/practice/structural/flyweight/index.ts",
-        "start:proxy": "pnpm start src/practice/structural/proxy/index.ts"
+        "start:proxy": "pnpm start src/practice/structural/proxy/index.ts",
+        "start:cor": "pnpm start src/practice/behavioral/chain-of-responsibility/index.ts"
     },
     "keywords": [],
     "author": "",
