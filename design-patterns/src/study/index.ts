@@ -15,4 +15,5 @@
 // import "./structural/proxy";
 
 // # Behavioral Patterns
-import "./behavioral/chain-of-responsibility";
+// import "./behavioral/chain-of-responsibility";
+import "./behavioral/command";
