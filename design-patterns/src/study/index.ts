@@ -17,4 +17,6 @@
 // # Behavioral Patterns
 // import "./behavioral/chain-of-responsibility";
 // import "./behavioral/command";
-import "./behavioral/iterator";
+// import "./behavioral/iterator";
+// import "./behavioral/mediator";
+import "./behavioral/memento";
