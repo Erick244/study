@@ -19,4 +19,5 @@
 // import "./behavioral/command";
 // import "./behavioral/iterator";
 // import "./behavioral/mediator";
-import "./behavioral/memento";
+// import "./behavioral/memento";
+import "./behavioral/observer";
