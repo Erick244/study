@@ -21,4 +21,5 @@
 // import "./behavioral/mediator";
 // import "./behavioral/memento";
 // import "./behavioral/observer";
-import "./behavioral/state";
+// import "./behavioral/state";
+import "./behavioral/strategy";

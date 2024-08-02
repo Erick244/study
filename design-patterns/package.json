@@ -24,7 +24,8 @@
         "start:mediator": "pnpm start src/practice/behavioral/mediator/index.ts",
         "start:memento": "pnpm start src/practice/behavioral/memento/index.ts",
         "start:observer": "pnpm start src/practice/behavioral/observer/index.ts",
-        "start:state": "pnpm start src/practice/behavioral/state/index.ts"
+        "start:state": "pnpm start src/practice/behavioral/state/index.ts",
+        "start:strategy": "pnpm start src/practice/behavioral/strategy/index.ts"
     },
     "keywords": [],
     "author": "",
