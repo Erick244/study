@@ -22,4 +22,5 @@
 // import "./behavioral/memento";
 // import "./behavioral/observer";
 // import "./behavioral/state";
-import "./behavioral/strategy";
+// import "./behavioral/strategy";
+import "./behavioral/template-method";

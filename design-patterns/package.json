@@ -25,7 +25,8 @@
         "start:memento": "pnpm start src/practice/behavioral/memento/index.ts",
         "start:observer": "pnpm start src/practice/behavioral/observer/index.ts",
         "start:state": "pnpm start src/practice/behavioral/state/index.ts",
-        "start:strategy": "pnpm start src/practice/behavioral/strategy/index.ts"
+        "start:strategy": "pnpm start src/practice/behavioral/strategy/index.ts",
+        "start:template-method": "pnpm start src/practice/behavioral/template-method/index.ts"
     },
     "keywords": [],
     "author": "",
