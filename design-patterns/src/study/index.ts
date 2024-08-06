@@ -23,4 +23,5 @@
 // import "./behavioral/observer";
 // import "./behavioral/state";
 // import "./behavioral/strategy";
-import "./behavioral/template-method";
+// import "./behavioral/template-method";
+import "./behavioral/visitor";
