@@ -1,1 +1,2 @@
-import "./domain-model";
+// import "./domain-model";
+import "./anemic-models";
