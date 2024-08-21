@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start:arch-styles": "ts-node-dev --cls --respawn --transpile-only src/architectural-styles/index.ts"
+        "start": "ts-node-dev --cls --respawn --transpile-only",
+        "start:arch-styles": "pnpm start src/architectural-styles/index.ts",
+        "start:arch-patterns": "pnpm start src/architectural-patterns/index.ts"
     },
     "keywords": [],
     "author": "",
