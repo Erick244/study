@@ -1,1 +1,2 @@
-import "./cqrs";
+// import "./cqrs";
+import "./blackboard";
