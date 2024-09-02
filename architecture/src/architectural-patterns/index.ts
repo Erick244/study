@@ -1,3 +1,4 @@
 // import "./cqrs";
 // import "./blackboard";
-import "./microkernel";
+// import "./microkernel";
+import "./event-sourcing";
