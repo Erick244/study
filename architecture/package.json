@@ -6,7 +6,8 @@
     "scripts": {
         "start": "ts-node-dev --cls --respawn --transpile-only",
         "start:arch-styles": "pnpm start src/architectural-styles/index.ts",
-        "start:arch-patterns": "pnpm start src/architectural-patterns/index.ts"
+        "start:arch-patterns": "pnpm start src/architectural-patterns/index.ts",
+        "start:enterprise-patterns": "pnpm start src/enterprise-patterns/index.ts"
     },
     "keywords": [],
     "author": "",
