@@ -1,18 +1,19 @@
 {
-  "name": "redis",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^22.5.4",
-    "@types/typescript": "^2.0.0",
-    "redis": "^4.7.0",
-    "typescript": "^5.5.4"
-  }
+    "name": "redis",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "run:mem-storage": "cls && tsc && node dist/memory-storage.js",
+        "run:nosql": "cls && tsc && node dist/nosql-database.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@types/node": "^22.5.4",
+        "@types/typescript": "^2.0.0",
+        "redis": "^4.7.0",
+        "typescript": "^5.5.4"
+    }
 }
