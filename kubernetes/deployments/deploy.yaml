@@ -1,0 +1,21 @@
+apiVersion: apps/v1 # Usamos apps/v1 poque o Deploy é parte da API
+kind: Deployment # Tipo de recurso
+metadata:
+    name: hello-deploy # Nome do recurso
+    labels:
+        app: hello-deploy-app # Nome da aplicação
+spec:
+    replicas: 3 # Quantidade de réplicas de pods
+    selector:
+        matchLabels:
+            app: hello-deploy-app # Nome da aplicação que sera usada para selecionar os pods
+    template: # Template para criar os pods
+        metadata:
+            labels:
+                app: hello-deploy-app # Nome da aplicação
+        spec:
+            containers:
+                - name: hello-deploy-app # Nome do container
+                  image: nginx:latest # Imagem do container
+                  ports:
+                      - containerPort: 80 # Porta do container
