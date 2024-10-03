@@ -1,0 +1,12 @@
+apiVersion: v1 # Versão da API
+kind: Pod # Tipo de recurso que esta sendo criado
+metadata:
+    name: hello-pods # Nome do recurso
+    labels:
+        app: hello-app # Nome da aplicação
+spec:
+    containers:
+        - name: hello-container # Nome do container
+          image: nginx:latest # Imagem do container
+          ports:
+              - containerPort: 80 # Porta do container
