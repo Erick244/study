@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+    name: myapp-statefulset
+spec:
+    selector:
+        matchLabels:
+            app: myapp
+    serviceName: myapp-service # Nome do serviço que o StatefulSet irá utilizar
+    replicas: 3
+    template:
+        metadata:
+            labels:
+                app: myapp
+        spec:
+            containers:
+                - name: myapp
+                  image: mysql:5.7
+                  ports:
+                      - containerPort: 3306
+                  volumeMounts:
+                      - name: mysql-persist-storage # Nome do volume
+                        mountPath: /var/lib/mysql # Caminho de montagem do volume
+                  env: # Variáveis de ambiente que o container usa-ra
+                      - name: MYSQL_ROOT_PASSWORD
+                        value: "root_password"
+    volumeClaimTemplates: # Configura para os Pods o armazenamento do volume
+        - metadata:
+              name: mysql-persist-storage # Deve conter o mesmo nome do volumeMounts
+          spec:
+              accessModes: ["ReadWriteOnce"] # Ações permitidas no volume
+              resources:
+                  requests:
+                      storage: 1Gi # Tamanho do volume para cada pod
