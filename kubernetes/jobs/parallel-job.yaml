@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+    name: example-parallel-job
+spec:
+    parallelism: 3 # Numero de pods executados ao mesmo tempo.
+    completions:
+        5 # Numero de execuções totais da tarefa,
+        # 2 pods adicionais serão executados após os três paralelos para chegar ao total.
+    template:
+        spec:
+            containers:
+                - name: example-parallel
+                  image: busybox
+                  command:
+                      ["sh", "-c", "echo Hello from Pod $(hostname); sleep 5"]
+            restartPolicy: Never

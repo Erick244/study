@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+    name: example-cron-job
+spec:
+    schedule: "*/1 * * * *" # Executa a cada um minuto
+    jobTemplate:
+        spec:
+            template:
+                spec:
+                    containers:
+                        - name: example-cron
+                          image: busybox
+                          command:
+                              ["sh", "-c", "echo CronJob executed at $(date)"]
+                    restartPolicy: Never

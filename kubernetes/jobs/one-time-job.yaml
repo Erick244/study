@@ -1,0 +1,13 @@
+apiVersion: batch/v1 # Versão que o Jub usa.
+kind: Job
+metadata:
+    name: example-one-time-job
+spec:
+    template:
+        spec:
+            containers:
+                - name: example
+                  image: busybox
+                  command: ["echo", "Hello K8s!"]
+            restartPolicy: Never # Define qu o Job não deve ser reiniciado após falhar ou concluir.
+    backoffLimit: 4 # Quantas vezes o Job pode tentar novamente após falha
