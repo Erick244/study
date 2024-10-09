@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1 # API usada pelo Ingress
+kind: Ingress
+metadata:
+    name: my-ingress
+spec:
+    ingressClassName: nginx
+    rules:
+        - host: hello-world.example # Baseado em HOST
+          http:
+              paths:
+                  - pathType: Prefix
+                    path: /
+                    backend:
+                        service:
+                            name: app-service
+                            port:
+                                number: 80
