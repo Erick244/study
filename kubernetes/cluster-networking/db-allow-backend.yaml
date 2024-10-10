@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+    name: db-allow-backend
+    namespace: default # Local onde a politica será aplicada
+spec:
+    podSelector:
+        matchLabels:
+            app: database # Aplica a politica para pods com o label "database"
+    policyTypes:
+        - Ingress # Configura o tipo de politica (Ingress (Entrada) ou Egress (Saida))
+    ingress:
+        - from:
+              - podSelector:
+                    matchLabels:
+                        app: backend # Configura quem pode enviar o trafego para o pod, neste caso o pod "backend"
+          ports:
+              - protocol: TCP
+                port: 3306 # Configura a porta que pode ser acessada, no caso a porta do banco de dados
