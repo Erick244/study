@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: app-config
+data: # Aqui você define as configurações
+    APP_ENV: production
+    APP_PORT: "3000"
+    DATABASE_URL: "postgres://user.password@localhost:5432/database"
