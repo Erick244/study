@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+    name: compute-quota
+    namespace: development # Nome do namespace
+spec:
+    hard:
+        pods: "10" # Limita o uso de 10 pods no namespace.
+        requests.cpu: "4" # Limita o soma de requests para 4 cores de CPU.
+        requests.memory: "10Gi" # Limita a soma de requests para 10Gi de memoria.
+        limits.cpu: "8" # Limita a soma dos limits de CPU a 8 cores.
+        limits.memory: "20Gi" # Limita a soma dos limits de memória a 20 GiB.
