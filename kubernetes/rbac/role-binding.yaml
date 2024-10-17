@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+    name: pod-reader-binding
+    namespace: development
+subjects:
+    - kind: User # Tipo de sujeito (User, Group ou ServiceAccount)
+      name: john # Como usamos o tipo User devemos definir o nome do usuário
+      apiGroup: rbac.authorization.k8s.io
+roleRef:
+    kind: Role # Tipo de objeto que o role binding está referenciando
+    name: pod-reader # Nome do role
+    apiGroup: rbac.authorization.k8s.io
