@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: secure-pod
+    labels:
+        name: secure-pod
+spec:
+    securityContext:
+        runAsUser: 1000 # O pod será executado como o UID 1000. (UID 1000 será dono do POD)
+        runAsGroup: 3000 # O grupo do POD será 3000. (GID 3000 será dono do POD)
+        fsGroup: 2000 # Define o grupo do sistema de arquivos do POD.
+        supplementalGroups: [4000] # Define grupos adicionais para o POD.
+
+    containers:
+        - name: secure-pod-container
+          image: busybox:1.28
+          command: ["sh", "-c", "sleep 1h"]
+          resources:
+              limits:
+                  cpu: "0.5"
+                  memory: "256Mi"
+              requests:
+                  cpu: "0.25"
+                  memory: "128Mi"
+          securityContext:
+              allowPrivilegeEscalation: false # Define se o container pode elevar privilégios.

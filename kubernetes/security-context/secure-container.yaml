@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: secure-container-pod
+    labels:
+        name: secure-container-pod
+spec:
+    containers:
+        - name: secure-container-pod
+          image: busybox:1.28
+          resources:
+              limits:
+                  memory: "128Mi"
+                  cpu: "500m"
+          command: ["sh", "-c", "sleep 1h"]
+          securityContext:
+              allowPrivilegeEscalation: false # Desabilita a elevação de privilégios.
+              runAsUser: 1000 # Define o UID do usuário que executará o container.
+              capabilities:
+                  add:
+                      ["NET_ADMIN", "SYS_TIME"] # Adiciona permissões específicas ao container.
+                      # Neste caso "NET_ADMIN" adiciona o gerenciamento de rede.
+                      # E "SYS_TIME" adiciona o gerenciamento de tempo.
