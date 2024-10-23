@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+    name: my-hpa
+spec:
+    scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: my-deploy # Label do deploy que vamos escalar
+    minReplicas: 1 # Máximo de pods
+    maxReplicas: 3 # Mínimo de pods
+    metrics:
+        - type: Resource
+          resource:
+              name: cpu
+              target:
+                  type: Utilization
+                  averageUtilization: 50 # Define a meta de utilização de CPU em 50%
