@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-vpa-deploy
+spec:
+    selector:
+        matchLabels:
+            app: my-vpa-deploy
+    template:
+        metadata:
+            labels:
+                app: my-vpa-deploy
+        spec:
+            containers:
+                - name: nginx-container
+                  image: nginx:latest
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80

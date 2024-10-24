@@ -1,0 +1,11 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+    name: my-vpa
+spec:
+    targetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: my-vpa-deploy # Deploy que ele usará
+    updatePolicy:
+        updateMode: "Auto" # O modo que o VPA ira rodar (Outros Recreate ou Off)

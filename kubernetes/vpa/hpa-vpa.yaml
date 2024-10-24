@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-hpa-vpa-deploy
+spec:
+    selector:
+        matchLabels:
+            app: my-hpa-vpa-deploy
+    template:
+        metadata:
+            labels:
+                app: my-hpa-vpa-deploy
+        spec:
+            containers:
+                - name: my-hpa-vpa-deploy
+                  image: nginx:latest
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+    name: hpa-app
+spec:
+    scaleTargetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: my-hpa-vpa-deploy
+    minReplicas: 1
+    maxReplicas: 3
+    targetCPUUtilizationPercentage: 50
+---
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+    name: vpa-app
+spec:
+    targetRef:
+        apiVersion: apps/v1
+        kind: Deployment
+        name: my-hpa-vpa-deploy
+    updatePolicy:
+        updateMode: "Auto"
