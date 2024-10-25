@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: schedule-pod
+    labels:
+        name: schedule-pod
+spec:
+    containers:
+        - name: schedule-pod
+          image: nginx
+          resources:
+              limits:
+                  memory: "128Mi"
+                  cpu: "500m"
+          ports:
+              - containerPort: 80
+    affinity:
+        nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms: # Especifica o nó que o pod será agendado
+                    - matchExpressions:
+                          - key: node-type # Label do node
+                            operator: In
+                            values:
+                                - "prod" # Valor do node
+    tolerations: # Permite o pod ser agendado em uma "taint" que tenha a label "node-type" com o valor "prod"
+        - key: "node-type"
+          operator: "Equal"
+          value: "prod"
+          effect: "NoSchedule"
