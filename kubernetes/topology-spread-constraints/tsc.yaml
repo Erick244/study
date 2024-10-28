@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: example-deploy
+spec:
+    selector:
+        matchLabels:
+            app: example-deploy
+    template:
+        metadata:
+            labels:
+                app: example-deploy
+        spec:
+            topologySpreadConstraints:
+                - maxSkew:
+                      1 # Permite que a quantidade de pods em um node seja maior que a quantidade de pods em outro node em 1,
+                      # um desbalance de 1.
+                  topologyKey: "topology.kubernetes.io/zone" # Indica que a distribuição deve ser feita por zonas de falha.
+                  whenUnsatisfiable: "DoNotSchedule" # Indica que caso não seja possível distribuir os pods, o pod não será executado.
+                  labelSelector:
+                      matchLabels:
+                          app: example-deploy
+            containers:
+                - name: example-deploy
+                  image: nginx
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80
