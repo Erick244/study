@@ -1,0 +1,7 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+    name: high-priority # Nome da prioridade
+value: 1000 # Valor da prioridade quanto mais alto o valor, mais prioridade o Pod terá.
+globalDefault: false # Se true, todas as prioridades que não tiverem uma prioridade específica serão atribuídas a esta prioridade.
+description: "Essa é uma prioridade alta para Pods críticos."
