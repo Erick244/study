@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: my-pvc
+spec:
+    accessModes:
+        - ReadWriteOnce # Indique que o volume pode ser lido e escrito por apenas um nó
+    storageClassName: local-path # Indique o StorageClass que sera usado, neste caso o 'local-path-provisioner'
+    resources:
+        requests:
+            storage: 1Gi # Indique o tamanho do volume
+    volumeMode: Filesystem
