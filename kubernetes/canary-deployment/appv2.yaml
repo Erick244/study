@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-app-v2
+spec:
+    replicas: 1 # 20% das replicas
+    selector:
+        matchLabels:
+            app: my-app
+            version: v2 # Especifica a versão da aplicação
+    template:
+        metadata:
+            labels:
+                app: my-app
+                version: v2 # Especifica a versão da aplicação
+        spec:
+            containers:
+                - name: my-app
+                  image: nginx:1.27 # Substitua pela imagem do seu aplicativo na versão nova em teste
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80 # Mesma porta da v1

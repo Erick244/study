@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: my-app-v1
+spec:
+    replicas: 4 # 80% das replicas
+    selector:
+        matchLabels:
+            app: my-app
+            version: v1 # Especifica a versão da aplicação
+    template:
+        metadata:
+            labels:
+                app: my-app
+                version: v1 # Especifica a versão da aplicação
+        spec:
+            containers:
+                - name: my-app
+                  image: nginx:1.26 # Substitua pela imagem do seu aplicativo na versão estável
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80
