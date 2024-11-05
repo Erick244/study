@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: myresource-controller
+spec:
+    selector:
+        matchLabels:
+            app: myresource-controller
+    template:
+        metadata:
+            labels:
+                app: myresource-controller
+        spec:
+            serviceAccountName: myresource-sa
+            containers:
+                - name: myresource-controller
+                  image: erickhenrique/k8s-custom-controller:latest
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"

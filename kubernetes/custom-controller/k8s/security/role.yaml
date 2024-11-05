@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+    namespace: default
+    name: myresource-role
+rules:
+    - apiGroups: [""]
+      resources: ["pods"]
+      verbs: ["get", "list", "watch", "create", "delete"]
+    - apiGroups: ["example.com"] # Deve ter o mesmo endereço definido no CRD
+      resources: ["myresources"] # Deve ter o mesmo nome definido no CRD
+      verbs: ["get", "list", "watch"]

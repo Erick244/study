@@ -1,0 +1,16 @@
+{
+    "name": "custom-controller",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node src/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@kubernetes/client-node": "^0.22.2"
+    },
+    "type": "module"
+}

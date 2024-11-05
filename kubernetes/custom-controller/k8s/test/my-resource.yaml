@@ -1,0 +1,7 @@
+apiVersion: example.com/v1 # Nome da API definida no CRD
+kind: MyResource # Nome do recurso
+metadata:
+    name: test-app
+# Props pedidas pelo recurso
+spec:
+    replicas: 3

@@ -1,0 +1,24 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+    name: myresources.example.com # Deve conter o nome do recurso no plural
+spec:
+    group: example.com
+    versions:
+        - name: v1
+          served: true # Define se o recurso será servido pelo cluster
+          storage: true # Define se o recurso será armazenado no cluster
+          schema:
+              openAPIV3Schema: # Define o esquema do recurso
+                  type: object # O tipo da propriedade do recurso
+                  properties:
+                      spec: # Uma propriedade que devera ser definida quando for utilizado o recurso
+                          type: object # O tipo da propriedade do recurso
+                          properties: # Propriedades do recurso
+                              replicas: # Uma propriedade que devera ser definida quando for utilizado o recurso
+                                  type: integer # O tipo da propriedade do recurso
+    scope: Namespaced # Define se o recurso será criado em um namespace ou não
+    names:
+        plural: myresources # O plural do recurso
+        singular: myresource # O singular do recurso
+        kind: MyResource # O tipo do recurso
