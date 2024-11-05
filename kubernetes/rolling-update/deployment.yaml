@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: rolling-update-app
+spec:
+    selector:
+        matchLabels:
+            app: rolling-update-app
+    template:
+        metadata:
+            labels:
+                app: rolling-update-app
+        spec:
+            containers:
+                - name: rolling-update-app
+                  image: nginx:1.20
+                  resources:
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  ports:
+                      - containerPort: 80
