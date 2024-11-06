@@ -1,0 +1,9 @@
+apiVersion: kubescheduler.config.k8s/v1
+kind: KubeSchedulerConfiguration
+extenders:
+    - urlPrefix: "http://localhost:3000" # URL para a API do Scheduler Extender
+      filterVerb: "filter" # Endpoint da API para o /filter
+      prioritizeVerb: "prioritize" # # Endpoint da API para o /prioritize
+      weight: 1 # Define o peso do Scheduler Extender que será usado para calcular a pontuação final do node.
+      enableHttps: false
+      nodeCacheCapable: false # Indica se o Scheduler Extender suporta cache de nodes.
