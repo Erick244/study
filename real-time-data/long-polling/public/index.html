@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Long Polling</title>
+    </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+        }
+
+        input {
+            border: none;
+            border-bottom: 2px solid white;
+            background-color: transparent;
+            color: white;
+            padding: 5px;
+        }
+
+        input:focus {
+            transition: all 150ms;
+            outline: none;
+            border-color: dodgerblue;
+        }
+
+        button {
+            background-color: transparent;
+            padding: 5px 10px;
+            border: 2px solid dodgerblue;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transition: all 150ms;
+            background-color: dodgerblue;
+            color: white;
+        }
+
+        ul#chat {
+            padding: 10px;
+            border: 2px white solid;
+            border-radius: 10px;
+            width: 400px;
+            height: 100%;
+            max-height: 400px;
+            overflow-y: scroll;
+        }
+
+        ul#chat > li {
+            background-color: #555;
+            margin: 10px 0px;
+            padding: 5px;
+            color: white;
+            list-style: none;
+        }
+    </style>
+    <body>
+        <form id="form">
+            <input id="input" type="text" placeholder="message" />
+            <button>Send</button>
+        </form>
+        <ul id="chat"></ul>
+    </body>
+    <script>
+        const chat = document.getElementById("chat");
+        const input = document.getElementById("input");
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const inputValue = input.value;
+
+            if (inputValue) {
+                publish(inputValue);
+                input.value = "";
+            }
+        });
+
+        async function publish(msg) {
+            await fetch("/publish", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ msg }),
+            });
+        }
+
+        async function subscribe() {
+            const resp = await fetch("/subscribe", {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            const data = await resp.json();
+
+            const item = document.createElement("li");
+
+            item.innerText = data.msg;
+            chat.appendChild(item);
+
+            subscribe();
+        }
+
+        window.onload = () => subscribe();
+    </script>
+</html>
