@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Short Polling</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                width: 100vw;
+                height: 100vh;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                background-color: #555;
+                color: white;
+                font-family: monospace;
+                font-size: 40px;
+                user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Counter</h1>
+        <div id="counter"></div>
+    </body>
+    <script>
+        const counterDiv = document.getElementById("counter");
+
+        function shortPolling() {
+            fetch("/check-updates")
+                .then((resp) => resp.json())
+                .then(
+                    (data) => (counterDiv.innerText = data.data || data.message)
+                )
+                .catch((e) => console.error(e))
+                .finally(setTimeout(shortPolling, 2000));
+        }
+
+        window.ondblclick = shortPolling;
+    </script>
+</html>
