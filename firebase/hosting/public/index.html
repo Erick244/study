@@ -63,6 +63,7 @@
     <body>
         <button onclick="googleAuth()">Login with Google</button>
         <script>
+            // Authentication
             function googleAuth() {
                 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -74,6 +75,21 @@
                         console.log(user);
                     });
             }
+
+            // firestore
+            window.onload = () => {
+                const db = firebase.firestore();
+
+                const productsRef = db.collection("products");
+
+                const query = productsRef.where("price", ">=", 23);
+
+                query.onSnapshot((products) => {
+                    products.forEach((doc) => {
+                        const data = doc.data();
+                    });
+                });
+            };
         </script>
     </body>
 </html>
