@@ -77,19 +77,19 @@
             }
 
             // firestore
-            window.onload = () => {
-                const db = firebase.firestore();
+            // window.onload = () => {
+            //     const db = firebase.firestore();
 
-                const productsRef = db.collection("products");
+            //     const productsRef = db.collection("products");
 
-                const query = productsRef.where("price", ">=", 23);
+            //     const query = productsRef.where("price", ">=", 23);
 
-                query.onSnapshot((products) => {
-                    products.forEach((doc) => {
-                        const data = doc.data();
-                    });
-                });
-            };
+            //     query.onSnapshot((products) => {
+            //         products.forEach((doc) => {
+            //             const data = doc.data();
+            //         });
+            //     });
+            // };
         </script>
     </body>
 </html>
