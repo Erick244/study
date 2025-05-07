@@ -2,49 +2,77 @@ import "dotenv/config";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.GEMINI_API_KEY,
+    baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
 });
 
-const ask = async (question: string) => {
+(async () => {
+    const tools: OpenAI.Chat.Completions.ChatCompletionTool[] = [
+        {
+            type: "function",
+            function: {
+                name: "register_client",
+                description:
+                    "Você deve ter os seguinte dados: nome, cpf e endereço, para registrar um cliente.",
+                parameters: {
+                    type: "object",
+                    properties: {
+                        name: { type: "string" },
+                        cpf: { type: "string" },
+                        address: { type: "string" },
+                    },
+                    required: ["name", "cpf", "address"],
+                    additionalProperties: false,
+                },
+                strict: true,
+            },
+        },
+    ];
+
+    const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
+        {
+            role: "user",
+            content:
+                "Ola, gostaria de fazer meu cadastro. Nome: João, CPF: 123.456.789-00, Endereço: Rua A, 123",
+        },
+    ];
+
     const completion = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [
-            {
-                role: "assistant",
-                content: [
-                    {
-                        type: "text",
-                        text: `
-							Você é um atendente de uma pizzaria. Seu papel é atender aos clientes
-							e anotar seu pedido final. Você deve responder o cliente de forma
-							amigável e educada, utilizando emojis. Caso você pereba que o cliente
-							está desinternado você deve utilizar estratégias para mantê-lo engajado
-							sem forçar muito. As respostar você devem ser curtas e objetivas. Na questão
-							dos itens do menu, valores e etc, você pode inventar.
-						`,
-                    },
-                ],
-            },
-            {
-                role: "user",
-                content: [
-                    {
-                        type: "text",
-                        text: question,
-                    },
-                ],
-            },
-        ],
-        store: true,
+        model: "gemini-2.0-flash",
+        messages,
+        tools,
     });
 
-    return completion.choices[0].message;
-};
+    const message = completion.choices[0].message;
+    const toolCalls = completion.choices[0].message.tool_calls;
 
-(async () => {
-    const userMessage =
-        "Acho que não quero mais pedir, olhei a concorrência e vi que tem um preço melhor.";
-    const aiResponse = await ask(userMessage);
+    if (!toolCalls) {
+        return;
+    }
 
-    console.log(aiResponse);
+    for (const toolCall of toolCalls) {
+        const args = JSON.parse(toolCall.function.arguments);
+        let result = null;
+
+        switch (toolCall.function.name) {
+            case "register_client":
+                result = `Cliente ${args.name} registrado com sucesso!`;
+                break;
+        }
+
+        messages.push(message);
+        messages.push({
+            role: "tool",
+            tool_call_id: toolCall.id,
+            content: String(result),
+        });
+    }
+
+    const finalCompletion = await openai.chat.completions.create({
+        model: "gemini-2.0-flash",
+        messages,
+        tools,
+    });
+
+    console.log(finalCompletion.choices[0].message.content);
 })();
