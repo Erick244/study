@@ -3,6 +3,7 @@
 		"@hapi/boom": "^10.0.1",
 		"@types/qrcode-terminal": "^0.12.2",
 		"baileys": "^6.7.16",
+		"fiwa": "^1.1.1",
 		"mongo-baileys": "^1.0.1",
 		"mongodb": "^6.16.0",
 		"qrcode-terminal": "^0.12.0",
