@@ -1,5 +1,4 @@
 import { FiWhatsAppClient } from "fiwa";
-import qrcode from "qrcode-terminal";
 
 let next = false;
 
@@ -14,7 +13,6 @@ async function startSession(id: string) {
 
     client.on("qr", (qr) => {
         console.log("Scan this QR code:", qr);
-        qrcode.generate(qr, { small: true });
     });
 
     client.on("ready", async () => {
@@ -23,14 +21,15 @@ async function startSession(id: string) {
 
     client.on("message", (message) => {
         const jid = message.key.remoteJid;
-        console.log(JSON.stringify(message, null, 2));
-
         console.log(
-            "Text message: ",
-            !!message.message?.["extendedTextMessage"]
+            JSON.stringify(message.message?.extendedTextMessage, null, 2)
         );
 
         client.sendText(jid!, "Hello world!");
+    });
+
+    client.on("messageFromClient", async (message) => {
+        console.log("Message from client: ", message);
     });
 
     await client.start();
